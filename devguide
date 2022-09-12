@@ -1,0 +1,9 @@
+-- This file is for dev instructions and steps. Not a README
+
+
+rails new rrcomplex -j=esbuild --database=postgresql // New project
+brew services start postgresql // Start postgresql server
+bin/rails db:create // Create a new db
+rails db:migrate // DB migration
+
+dev/bin // Run server
