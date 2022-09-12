@@ -18,7 +18,7 @@
     "npm": "8.15.0"
   },
   "scripts": {
-    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --loader:.js=jsx --define:process.env.REDUX_LOGGING=true",
-    "watch": "esbuild app/javascript/*.* --watch --bundle --outdir=app/assets/builds --loader:.js=jsx --define:process.env.REDUX_LOGGING=true"
+    "build": "esbuild app/javascript/*.* --bundle --sourcemap --outdir=app/assets/builds --loader:.js=jsx --public-path=assets --define:process.env.REDUX_LOGGING=true",
+    "watch": "esbuild app/javascript/*.* --watch --bundle --outdir=app/assets/builds --loader:.js=jsx --public-path=assets --define:process.env.REDUX_LOGGING=true"
   }
 }
