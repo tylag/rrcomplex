@@ -1,5 +1,7 @@
 <h3>Welcome <%= @resource.full_name %>!</h3>
 <p>You can confirm your account email through the link below:</p>
-<p style="background-color: rgb(15, 95, 208);text-align:center;padding:10px;color:white;width:150px;border-style: none;cursor:pointer;border-radius: 5px;"><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p style="background-color: rgb(15, 95, 208);text-align:center;padding:10px;color:white;width:150px;border-style: none;cursor:pointer;border-radius: 5px;">
+  <%= link_to 'Confirm my account', confirmation_url(@resource, {confirmation_token: @token, config: message['client-config'].to_s, redirect_url: message['redirect-url']}).html_safe, {:style=>'color:#FFFFFF;text-decoration: none;'} %>
+</p>
 <p>If the link doesn't work, you can copy and paste the following URL to your browser:</p>
 <%= link_to confirmation_url(@resource, confirmation_token: @token), confirmation_url(@resource, confirmation_token: @token) %>
