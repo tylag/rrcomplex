@@ -18,20 +18,10 @@ export default function Router(){
     {
       path: 'auth',
       children: [
-        {
-          path: 'login',
-          element: (
-            <Login />
-          ),
-        },
-        {
-          path: 'register',
-          element: (
-            <Register />
-          ),
-        },
-        { path: 'login-unprotected', element: <Login /> },
-        { path: 'register-unprotected', element: <Register /> },
+        { path: 'login', element: <Login /> },
+        { path: 'register', element: <Register />},
+        { path: 'forget-password', element: <ForgetPassword /> },
+        { path: 'Verify', element: <Verify /> },
         // { path: 'reset-password', element: <ResetPassword /> },
         // { path: 'verify', element: <VerifyCode /> },
       ],
@@ -65,3 +55,5 @@ export default function Router(){
 
 const Login = Loadable(lazy(() => import('./pages/auth/Login')))
 const Register = Loadable(lazy(() => import('./pages/auth/Register')))
+const ForgetPassword = Loadable(lazy(() => import('./pages/auth/ForgetPassword')))
+const Verify = Loadable(lazy(() => import('./pages/auth/Verify')))

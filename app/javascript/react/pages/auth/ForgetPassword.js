@@ -28,13 +28,12 @@ function Copyright(props) {
 
 const theme = createTheme();
 
-export default function Login() {
+export default function ForgetPassword() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     console.log({
-      email: data.get('email'),
-      password: data.get('password'),
+      email: data.get('email')
     });
   };
 
@@ -54,7 +53,7 @@ export default function Login() {
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
-            Sign in
+            Forgot password?
           </Typography>
           <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
             <TextField
@@ -67,37 +66,18 @@ export default function Login() {
               autoComplete="email"
               autoFocus
             />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-            />
             <Button
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
-              Sign In
+              Send password reset email
             </Button>
             <Grid container>
-              <Grid item xs>
-                <Link to="/auth/forget-password" variant="body2">
-                  Forgot password?
-                </Link>
-              </Grid>
               <Grid item>
-                <Link to="/auth/register" variant="body2">
-                  {"Don't have an account? Sign Up"}
+                <Link to="/auth/login" variant="body2">
+                  {"Do you want to login?"}
                 </Link>
               </Grid>
             </Grid>

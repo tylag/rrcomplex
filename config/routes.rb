@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   get '/auth', to: 'home#index'
   get '/auth/login', to: 'home#index'
   get '/auth/register', to: 'home#index'
+  get '/auth/verify', to: 'home#index'
+  get '/auth/forget-password', to: 'home#index'
 end
